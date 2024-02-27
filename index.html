@@ -23,7 +23,7 @@
                     <input type="button" value="7" onclick="display.value +='7' ">
                     <input type="button" value="8" onclick="display.value +='8' ">
                     <input type="button" value="9" onclick="display.value +='9' ">
-                    <input type="button" value="*" onclick="display.value +='+' " class="operator">
+                    <input type="button" value="*" onclick="display.value +='*' " class="operator">
                 </div>
                 <div>
                     <input type="button" value="4" onclick="display.value +='4' ">
@@ -44,7 +44,10 @@
                     
                 </div>
                 <div>
-                    <input type="button" value="Memory" onclick="display.value =eval(display.value)" class="memory">
+                    <input type="button" value="M" onclick="addToMemory(display.value)"/>
+                    <input type="button" value="MC" onclick="clearMemory()"/>
+                    <input type="button" value="M-" onclick="display.value=getNextCalculation()"/>
+                    <input type="button" value="M+" onclick="display.value=getPreviousCalculation()"/>
                 </div>
             </form>
         </div>
