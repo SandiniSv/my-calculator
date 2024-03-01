@@ -16,6 +16,40 @@ $(document).ready(function() {
     });
 
     //Note: () => {} is same as function() {}
+
+    $('#getNextCalculation').on('click', () => {
+        var memoryIndex = memoryIndex.val();
+
+        if (memoryIndex === null) {
+                    return null;
+                } else if ((memoryIndex - 1) >= 0) {
+                    return memory[--memoryIndex];
+                 } else {
+                    return memory[memoryIndex];
+                }
+    });
+
+        
+       $('getPreviousCalculation').on('click', () => {
+
+
+            if (memoryIndex === null) {
+                return null;
+                 } else if ((memoryIndex + 1) <= memory.length - 1) {
+                    return memory[++memoryIndex];
+            } else {
+                    return memory[memoryIndex];
+      }
+    });
+
+    $('clearMemory').on('click', () => {
+        memory = [];
+        memoryIndex = null;
+        display.val("");
+
+    });
+       
+
 });
 
     // var display = $('input[name="display"]').eq(0);
@@ -30,14 +64,14 @@ $(document).ready(function() {
     
         
     // const getPreviousCalculation = () => {
-    //     if (memoryIndex === null) {
+    //   if (memoryIndex === null) {
     //         return null;
     //     } else if ((memoryIndex + 1) <= memory.length - 1) {
     //         return memory[++memoryIndex];
     //     } else {
     //         return memory[memoryIndex];
     //     }
-    // };
+    // };  
     
 
     // const getNextCalculation = () => {
