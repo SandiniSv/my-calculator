@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    <script src="script1.js"></script>
+    <script src="script.js"></script>
 
 </head>
 <body>
@@ -14,7 +14,8 @@
         <div class="calculator">
             <form>
                 <div class="display">
-                    <input type="text" name="display">
+                    <!-- Let's assign an ID field for this -->
+                    <input type="text" id="displayField" name="display">
                 </div>
                 <div>
                     <input type="button" value="AC" onclick="display.value ='' " class="operator">
@@ -47,7 +48,8 @@
 
                 </div>
                 <div>
-                    <input type="button" value="M" onclick="addToMemory(display.value)"/>
+                    <!-- onclick is replaced by a jQuery method -->
+                    <input type="button" id="addMemory" value="M"/>
                     <input type="button" value="MC" onclick="clearMemory()"/>
                     <input type="button" value="M-" onclick="display.value=getNextCalculation()"/>
                     <input type="button" value="M+" onclick="display.value=getPreviousCalculation()"/>
