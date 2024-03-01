@@ -14,6 +14,8 @@ $(document).ready(function() {
         // Set the display field to the result of the calculation
         display.val(eval(calculation));
     });
+
+    //Note: () => {} is same as function() {}
 });
 
     // var display = $('input[name="display"]').eq(0);
