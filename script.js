@@ -30,7 +30,7 @@ $(document).ready(function() {
     });
 
         
-       $('getPreviousCalculation').on('click', () => {
+       $('#getPreviousCalculation').on('click', () => {
 
 
             if (memoryIndex === null) {
@@ -42,7 +42,7 @@ $(document).ready(function() {
       }
     });
 
-    $('clearMemory').on('click', () => {
+    $('#clearMemory').on('click', () => {
         memory = [];
         memoryIndex = null;
         display.val("");
