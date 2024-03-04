@@ -4,14 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
 </head>
 <body>
-
     <div class="container">
         <div class="calculator">
             <form>
                 <div class="display">
-                    <input type="text" name="display">
+                    <!-- Let's assign an ID field for this -->
+                    <input type="text" id="displayField" name="display">
                 </div>
                 <div>
                     <input type="button" value="AC" onclick="display.value ='' " class="operator">
@@ -23,7 +27,7 @@
                     <input type="button" value="7" onclick="display.value +='7' ">
                     <input type="button" value="8" onclick="display.value +='8' ">
                     <input type="button" value="9" onclick="display.value +='9' ">
-                    <input type="button" value="*" onclick="display.value +='+' " class="operator">
+                    <input type="button" value="*" onclick="display.value +='*' " class="operator">
                 </div>
                 <div>
                     <input type="button" value="4" onclick="display.value +='4' ">
@@ -41,14 +45,18 @@
                     <input type="button" value="00" onclick="display.value +='00' ">
                     <input type="button" value="0" onclick="display.value +='0' ">
                     <input type="button" value="=" onclick="display.value =eval(display.value)" class="equal operator">
-                    
+
                 </div>
                 <div>
-                    <input type="button" value="Memory" onclick="display.value =eval(display.value)" class="memory">
+                    <!-- onclick is replaced by a jQuery method -->
+                    <input type="button" id="addMemory" value="M"/>
+                    <input type="button" id="clearMemory"  value="MC"/>
+                    <input type="button" id="getNextCalculation" value="M-"/>
+                    <input type="button" id="getPreviousCalculation" value="M+" />
                 </div>
             </form>
         </div>
     </div>
-<script src="script.js"></script>
+
 </body>
 </html>
