@@ -18,27 +18,29 @@ $(document).ready(function() {
     //Note: () => {} is same as function() {}
 
     $('#getNextCalculation').on('click', () => {
-        var memoryIndex = memoryIndex.val();
+        var memoryIndex = memoryIndex;
 
         if (memoryIndex === null) {
-                    return null;
+                    display.val('');
                 } else if ((memoryIndex - 1) >= 0) {
-                    return memory[--memoryIndex];
+                    memoryIndex--;
+                    display.val(memory[memoryIndex]);
                  } else {
-                    return memory[memoryIndex];
+                    display.val(memory[memoryIndex]);
                 }
     });
 
         
-       $('#getPreviousCalculation').on('click', () => {
+    $('#getPreviousCalculation').on('click', () => {
 
 
-            if (memoryIndex === null) {
-                return null;
-                 } else if ((memoryIndex + 1) <= memory.length - 1) {
-                    return memory[++memoryIndex];
-            } else {
-                    return memory[memoryIndex];
+        if (memoryIndex === null) {
+                    display.val('');
+                } else if ((memoryIndex + 1) <= memory.length - 1) {
+                    memoryIndex++;
+                    display.val(memory[memoryIndex]);
+                } else {
+                    display.val(memory[memoryIndex]);
       }
     });
 
