@@ -18,7 +18,6 @@ $(document).ready(function() {
     //Note: () => {} is same as function() {}
 
     $('#getNextCalculation').on('click', () => {
-        var memoryIndex = memoryIndex;
 
         if (memoryIndex === null) {
                     display.val('');
